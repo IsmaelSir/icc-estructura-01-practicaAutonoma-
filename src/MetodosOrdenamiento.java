@@ -141,7 +141,8 @@ public class MetodosOrdenamiento {
     }
 
     // Método de inserción con errores
-    // Error encontrado:
+    // Error encontrado: la linea 152 el while "(i > 0 && arreglo[i] < key)" los signos de comparacion estan incorrectos
+    // correccion: correcion de los signos de comparacion "while (i >= 0 && arreglo[i] > key)"
     public int[] insercionPrimero(int[] arregloOriginal) {
 
         int[] arreglo = Arrays.copyOf(arregloOriginal, arregloOriginal.length);
@@ -149,7 +150,7 @@ public class MetodosOrdenamiento {
             int key = arreglo[j];
             int i = j - 1;
 
-            while (i > 0 && arreglo[i] > key) {
+            while (i >= 0 && arreglo[i] > key) {
                 arreglo[i + 1] = arreglo[i];
                 i--;
             }
@@ -159,7 +160,7 @@ public class MetodosOrdenamiento {
     }
 
     // Método de inserción con errores
-    // Error encontrado:
+    // Error encontrado: en la linea 171 esta con indice j en ves de indece i ""
     public int[] insercionSegundo(int[] arregloOriginal) {
 
         int[] arreglo = Arrays.copyOf(arregloOriginal, arregloOriginal.length);
@@ -167,7 +168,7 @@ public class MetodosOrdenamiento {
             int actual = arreglo[j];
 
             int i = j - 1;
-            for (; j >= 0 && arreglo[j] > actual; j--) {
+            for (; i >= 0 && arreglo[i] < actual; i--) {
                 arreglo[j + 1] = arreglo[j];
             }
             arreglo[i + 1] = actual;
